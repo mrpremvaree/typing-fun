@@ -37,8 +37,7 @@ class ApplicationController < Sinatra::Base
   end
     
   post '/lesson' do
-    binding.pry
-    @sentence = sentences[params[:lesson_number].to_i]
+    @sentence = exercise_selector(params[:lesson_number].to_i-1)
     erb :lesson
   end
       
